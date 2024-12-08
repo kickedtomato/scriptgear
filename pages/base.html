@@ -1,0 +1,31 @@
+{{ template "base" . }}
+{{ define "base" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ScriptGear - The best place to share your UserScripts!">
+    <meta name="keywords" content="userscripts, custom scripts, browser scripts, script repository, script sharing, userscript community, Greasemonkey scripts, Tampermonkey scripts, automation scripts, custom browser tools, script hub, open-source scripts, script downloads, web enhancements, user tools, custom code, script development"> <!-- TODO: add script ID, name, ID-name, and author when on a script preview -->
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="ScriptGear"> <!-- change to dynamic title when implemented -->
+    <meta property="og:description" content="Your description here"> <!-- change to dynamic description when implemented -->
+    <meta property="og:image" content="{{ .HostURL }}/static/img/og-image.jpg"> <!-- change to dynamic image when implemented -->
+    <meta property="og:url" content="{{ .HostURL }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ScriptGear"> <!-- change to dynamic title when implemented -->
+    <meta name="twitter:description" content="ScriptGear - The best place to share your UserScripts!"> <!-- change to dynamic description when implemented -->
+    <meta name="twitter:image" content="{{ .HostURL }}/static/img/twitter-card.jpg"> <!-- change to dynamic image when implemented -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="{{ .HostURL }}">
+
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/css/master.css">
+    <title>ScriptGear{{ if ne .SubPage "" }} - {{ .SubPage}}{{ end }}</title>
+</head>
+<body>
+{{ block "content" . }}
+{{ end }}
+</body>
+</html>
+{{ end }}
