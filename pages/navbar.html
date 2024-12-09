@@ -1,0 +1,99 @@
+{{ define "navbar.html" }}
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="/static/img/scriptgear.png" alt="ScriptGear" class="site-icon">
+            <span class="site-name">ScriptGear</span>
+        </div>
+
+        <div class="navbar-center">
+            <ul class="navbar-tools">
+                <li>
+                    <a href="/browse?ignore=libraries">
+                        <img src="/static/icons/document-list.png" alt="Browse"> Browse Scripts/Styles
+                    </a>
+                </li>
+                <li>
+                    <a href="/discussion">
+                        <img src="/static/icons/balloons.png" alt="Forum"> Forum
+                    </a>
+                </li>
+                <li>
+                    <a href="/help">
+                        <img src="/static/icons/lifebuoy.png" alt="Help"> Help
+                    </a>
+                </li>
+                <li>
+                    <a href="/search/adv">
+                        <img src="/static/icons/magnifier.png" alt="Advanced Search"> Advanced Search
+                    </a>
+                </li>
+                <li>
+                    <a href="/mod/users">
+                        <img src="/static/icons/user-silhouette.png" alt="User List"> User List
+                    </a>
+                </li>
+                <li>
+                    <a href="/browse?ignore=scripts,styles">
+                        <img src="/static/icons/book.png" alt="Libraries"> Libraries
+                    </a>
+                </li>
+                <li>
+                    <a href="/mod/log">
+                        <img src="/static/icons/newspaper.png" alt="Moderation Log"> Moderation Log
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Dropdown for overflow tools -->
+            <div class="navbar-overflow dropdown">
+                <button class="dropdown-toggle">More...</button>
+                <div class="dropdown-menu">
+                    <a href="/extra1">Extra Item 1</a>
+                    <a href="/extra2">Extra Item 2</a>
+                    <a href="/extra3">Extra Item 3</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-right">
+            <form action="/search" method="GET" class="search-bar">
+                <input type="text" name="query" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+
+            {{ if .IsLoggedIn }}
+                <div class="account-section">
+                    <img src="/api/v1/get/userpfp?user.id={{ .UserID }}&format=png&size=64" alt="User Profile" class="user-icon">
+                    <span class="username">{{ .UserName }}</span>
+                    <a href="/logout" class="logout-btn">
+                        <img src="/static/icons/door-open-out.png" alt="Sign Out"> Sign Out
+                    </a>
+                    <!-- Create dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-toggle">+</button>
+                        <div class="dropdown-menu">
+                            <a href="/create/script"><img src="/static/icon/script-code.png" alt="Script"> Script</a>
+                            <a href="/create/style"><img src="/static/icons/edit-style.png" alt="Style"> Style</a>
+                            <a href="/create/organization"><img src="/static/icons/folder-horizontal-open.png" alt="Organization"> Organization</a>
+                        </div>
+                    </div>
+                    <!-- Account settings dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-toggle">V</button>
+                        <div class="dropdown-menu account-dropdown">
+                            <a href="/user/settings"><img src="/static/icons/user--pencil.png" alt="Profile Customization"> Profile Customization</a>
+                            <a href="/user/friends"><img src="/static/icons/xfn-friend.png" alt="Friends"> Friends</a>
+                            <a href="/user/myscripts">My Scripts</a>
+                            <a href="/user/mystyles">My Styles</a>
+                            <a href="/user/myorgs">My Organizations</a>
+                        </div>
+                    </div>
+                </div>
+            {{ else }}
+                <a href="/login" class="login-btn">
+                    <img src="/static/icons/door-open-in.png" alt="Sign In"> Sign In
+                </a>
+            {{ end }}
+        </div>
+    </nav>
+{{ end }}

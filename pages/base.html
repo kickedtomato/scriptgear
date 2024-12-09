@@ -26,6 +26,8 @@
     <title>ScriptGear{{ if ne .SubPage "" }} - {{ .SubPage}}{{ end }}</title>
 </head>
 <body>
+{{ template "navbar.html" . }}
+
 {{ block "content" . }}
 {{ end }}
 </body>

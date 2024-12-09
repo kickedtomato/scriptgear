@@ -4,6 +4,129 @@
          MIT License
  */
 
-body {
+/* Dropdown CSS import */
+@import url("/static/css/dropdown.css");
 
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #05681b;
+    color: white;
+    padding: 1rem 2rem;
+    font-family: "Consolas", monospace;
+    border-bottom: 5px solid #0e910f;
+}
+
+/* Logo section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-icon {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+}
+
+.site-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navbar tools section */
+.navbar-center {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 1rem;
+}
+
+.navbar-tools {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navbar-tools li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.navbar-tools li a img {
+    margin-right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    image-rendering: pixelated;
+}
+
+/* Dropdown for overflow tools */
+.navbar-overflow {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #05681b;
+    border: 1px solid white;
+    padding: 0.5rem;
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Search bar */
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #054a13;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Account section */
+.account-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    image-rendering: pixelated;
 }

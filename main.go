@@ -22,10 +22,13 @@ func main() {
 
 	r.GET("/home", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "base", gin.H{
-			"HostURL": "",
-			"SubPage": "Home",
+			"HostURL":    "",
+			"SubPage":    "Home",
+			"IsLoggedIn": true,
 		})
 	})
+
+	r.GET("/api/v1/get/userpfp/", func(c *gin.Context) {})
 
 	r.Run(`:8080`)
 }

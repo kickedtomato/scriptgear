@@ -1,0 +1,60 @@
+/*
+ CSS for the dropdown menus
+ */
+
+/* Account dropdown menus */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #014f2a;
+    border: 1px solid white;
+    padding: 0.5rem;
+    z-index: 10;
+    min-width: 200px;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: #027942;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Align account dropdown menus properly */
+.account-dropdown {
+    right: auto;
+    left: -50%;
+    transform: translateX(-25%);
+}
+
+/* Prevent dropdowns from going off-screen */
+.dropdown-menu {
+    overflow-wrap: break-word;
+}
